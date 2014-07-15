@@ -1,5 +1,8 @@
 # FSI Fund Processing Demo
 
+
+Please see the [Demo WriteUp](docs/index.md) for the steps to recreate.
+
 In this demo, we look at some common scenarios that may arise at a FSI based customer although it's generic
 enough that it could be demo'd for a broad audience too. The domain is loosely based around an event that
 generates a new Fund that then needs to be broadcasted to a set of interested consumers where each can handle
@@ -14,5 +17,3 @@ See the Readme.md for each module for more information, but at a very high level
 * _fund-persister_ -- a microservce that consumers from a topic that represents a new fund being generated. this service is responsible for storing the Fund to a database
 * _fund-processor_ -- a microservice that consumes from a topic that represents a new fund being generated. this service
 transforms the data and stores to a different file location.
-
-Please see the [Demo WriteUp](docs/index.md) for the steps to recreate.

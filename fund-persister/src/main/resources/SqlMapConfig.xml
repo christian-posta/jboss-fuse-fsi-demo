@@ -32,7 +32,7 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="org.apache.derby.jdbc.ClientDriver"/>
-                <property name="url" value="jdbc:derby://localhost:1527//Users/ceposta/dev/poc/fsi/workspace/fsi-poc/target/opp.db"/>
+                <property name="url" value="jdbc:derby://localhost:1527//Users/ceposta/temp/opp.db"/>
                 <property name="username" value="app"/>
                 <property name="password" value="app"/>
             </dataSource>
