@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><transaction xmlns="http://poc.jboss.org/model/xml">
+  <fundNumber>1</fundNumber>
+  <transactionType>WITHDRAWL</transactionType>
+  <fundName>Global</fundName><fundType xmlns:ns1="http://poc.jboss.org/model/xml">Currency</fundType><fundStatus xmlns:ns1="http://poc.jboss.org/model/xml">Active</fundStatus>
+</transaction>
