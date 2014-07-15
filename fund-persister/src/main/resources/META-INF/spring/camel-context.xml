@@ -38,7 +38,7 @@
       </onException>
 
       <log message="[databaseRoute] Read a message off the newfund topic" />
-      <to uri="validator:com/fsi/poc/types.xsd" />
+      <to uri="validator:com/redhat/poc/fsi/types.xsd" />
       <choice>
         <when>
           <xpath>/tx:transaction/tx:fundName = 'Global'</xpath>
