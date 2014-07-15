@@ -1,35 +1,18 @@
-# Fictional FSI-domain Demo
+# FSI Fund Processing Demo
 
-### Build
+In this demo, we look at some common scenarios that may arise at a FSI based customer although it's generic
+enough that it could be demo'd for a broad audience too. The domain is loosely based around an event that
+generates a new Fund that then needs to be broadcasted to a set of interested consumers where each can handle
+the event separately.
 
-    mvn clean install
-    
-### Run locally
+There are three modules that make up this demo, each which can be deployed and demoed separately, but together
+can make for a full-blown Fabric8/JBoss Fuse demo.
 
-Each module can be run separately with separate terminal windows with:
+See the Readme.md for each module for more information, but at a very high level:
 
-    mvn camel:run
+* _file-listener_ -- a microservice that monitors a file system for files. when a file is detected and its contents placed on a publish-subscribe JMS destination (topic)
+* _fund-persister_ -- a microservce that consumers from a topic that represents a new fund being generated. this service is responsible for storing the Fund to a database
+* _fund-processor_ -- a microservice that consumes from a topic that represents a new fund being generated. this service
+transforms the data and stores to a different file location.
 
-### Running Derby as an external DB:
-By default, the local, standalone version uses Apache Derby.  You can download Apache Derby
-and start the remote network listener with the following command:
-
-    > $DERBY_HOME/bin/startNetworkServer -h localhost -p 1527 &
-
-Then you can use the derby _ij_ command promopt to interact with the server and install the required tables.
-The DB location must match that in the JDBC URI that's specified in _SqlMapConfig.xml_ 
-
-So for example, on my machine, the filter-local.properties file looks like this:
-
-    jdbc-driver=org.apache.derby.jdbc.ClientDriver
-    jdbc-url=jdbc:derby://localhost:1527//Users/ceposta/dev/poc/fsi/workspace/fsi-poc/target/opp.db
-    jdbc-username=app
-    jdbc-password=app
-
-So then the commands to run at the Derby ij console are:
-
-    > $DERBY_HOME/bin/ij
-
-    ij> connect 'jdbc:derby://localhost:1527//Users/ceposta/dev/poc/fsi/workspace/fsi-poc/target/opp.db;create=true';
-    ij> run '/Users/ceposta/dev/poc/fsi/workspace/fsi-poc/fund-persister/src/main/resources/sql/tables.sql';
-    ij> exit;
+Please see the [Demo WriteUp](docs/index.md) for the steps to recreate.
