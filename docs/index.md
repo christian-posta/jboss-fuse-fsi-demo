@@ -46,7 +46,7 @@ So let's get started.
 
 First note, when you download JBoss Fuse (I will use JBoss Fuse and Fabric8 as interchangeable entities for the purposes
 of this demo), you should edit $FUSE_HOME/etc/users.properties to contain a valid user. You can uncomment the last
-line so that -admin=admin,admin_ user is enabled.
+line so that -admin=admin,admin user is enabled.
 
 To start Fuse, run this command:
 
